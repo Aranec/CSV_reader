@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+{% endblock %}
+
+{% block body %}
+
+
+
+    <h2><a href="{{ path('main_categories') }}">GET STARTED !</a></h2>
+
+
+    <canvas></canvas>
+    <script src="{{ asset('js/index.js') }}"></script>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categories{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/categories.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <div class="categories-container">
+        {% for directory in directoriesCategories %}
+            {% set directoryName = directory|split('/')|last %}
+            <div class="categories-container-child">
+                <a href="{{ path('main_category', {'categoryName': directoryName}) }}">{{ directoryName }}</a>
+            </div>
+
+        {% endfor %}
+    </div>
+    <canvas></canvas>
+    <script src="{{ asset('js/index.js') }}"></script>
+{% endblock %}

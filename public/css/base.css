@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+*,
+::before,
+::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+body {
+    overflow: hidden;
+    width: 100vw;
+}
+
+main {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+
+    background: rgb(11,0,40);
+    background: linear-gradient(180deg, rgba(11,0,40,1) 0%, rgba(9,9,121,1) 100%, rgba(9,9,121,1) 100%);
+
+}
+
+header {
+    position: relative; /* Définit le contexte de positionnement pour les éléments fils */
+    background-image: url("../images/data_nodes.jpg");
+    background-size: cover;
+    background-position: 100% 20%;
+    transform: scaleY(-1) scale(1.4);
+    height: 200px;
+}
+
+.header-title {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scaleY(-1);
+    color: white;
+    font-size: 32px;
+
+}
+
+
+
+

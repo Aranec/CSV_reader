@@ -1,0 +1,26 @@
+.files-container{
+  position:absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #3b82f6;
+  max-width: fit-content;
+  padding: 20px;
+  border: 3px solid #f1f1f1;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+
+  font-size: 24px;
+}
+
+.files-container a {
+  text-decoration: none;
+  color: #f1f1f1;
+  margin-bottom: 10px;
+
+}
+
+.files-container a:hover {
+  color: rgb(9,9,121)
+}

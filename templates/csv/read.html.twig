@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Read CSV{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/read.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="table-infos">
+            <p>number of colums from the CSV file : {{ nbCol }}</p>
+            <p>number of rows from the CSV file : {{ nbRow }}</p>
+
+        <div class="form-param-display">
+            <form action="{{ path('csv_read', {'csvName': csvName, 'categoryName': categoryName}) }}" method="POST">
+                <label for="left_limit">left limit :</label>
+                <input type="text" name="left_limit" id="left_limit">
+
+                <label for="right_limit">right limit :</label>
+                <input type="text" name="right_limit" id="right_limit">
+
+                <button>Send</button>
+            </form>
+        </div>
+        </div>
+
+        <div class="table">
+            <table>
+                {% for row in data %}
+                    <tr>
+                        {% for column in row %}
+                            <td>
+                                {{ column }}
+                            </td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+    </div>
+
+{% endblock %}

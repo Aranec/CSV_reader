@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}categoryName{% endblock %}
+
+{% block stylesheets %}
+ <link rel="stylesheet" href="{{ asset('css/category.css') }}">
+{% endblock %}
+
+ {% block body %}
+
+  {{ categoryName }}
+
+  <div class="files-container">
+
+   {% for csv in CSVs %}
+    {% set csvName = csv|split('/')|last %}
+    <a href="{{ path('csv_read', {'csvName': csvName, 'categoryName': categoryName }) }}">{{ csvName }}</a>
+   {% endfor %}
+
+  </div>
+
+
+{% endblock %}
