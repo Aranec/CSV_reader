@@ -8,14 +8,17 @@
 
  {% block body %}
 
-  {{ categoryName }}
+  <div class="directory-container">
 
-  <div class="files-container">
+   <h2>{{ categoryName }}</h2>
 
-   {% for csv in CSVs %}
-    {% set csvName = csv|split('/')|last %}
-    <a href="{{ path('csv_read', {'csvName': csvName, 'categoryName': categoryName }) }}">{{ csvName }}</a>
-   {% endfor %}
+   <div class="files-container">
+    {% for csv in CSVs %}
+     {% set csvName = csv|split('/')|last %}
+     <a href="{{ path('csv_read', {'csvName': csvName, 'categoryName': categoryName }) }}">{{ csvName }}</a>
+    {% endfor %}
+   </div>
+
 
   </div>
 

@@ -8,10 +8,13 @@
 
 {% block body %}
 
+
+
     <div class="container">
         <div class="table-infos">
             <p>number of colums from the CSV file : {{ nbCol }}</p>
             <p>number of rows from the CSV file : {{ nbRow }}</p>
+
 
         <div class="form-param-display">
             <form action="{{ path('csv_read', {'csvName': csvName, 'categoryName': categoryName}) }}" method="POST">
@@ -26,20 +29,28 @@
         </div>
         </div>
 
-        <div class="table">
-            <table>
-                {% for row in data %}
-                    <tr>
-                        {% for column in row %}
-                            <td>
-                                {{ column }}
-                            </td>
-                        {% endfor %}
-                    </tr>
-                {% endfor %}
-            </table>
-        </div>
-
+{#        <div class="table">#}
+{#            <table>#}
+{#                {% for row in data %}#}
+{#                    <tr>#}
+{#                        {% for column in row %}#}
+{#                            <td>#}
+{#                                {{ column }}#}
+{#                            </td>#}
+{#                        {% endfor %}#}
+{#                    </tr>#}
+{#                {% endfor %}#}
+{#            </table>#}
+{#        </div>#}
     </div>
+        <button id="toggle-graph">DISPLAY</button>
+
+        <div class="data-json" data-json="{{ data | json_encode }}"></div>
+
+        <canvas></canvas>
+        <script src="{{ asset('js/render_graph.js') }}"></script>
+
+
+
 
 {% endblock %}

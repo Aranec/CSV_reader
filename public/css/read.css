@@ -52,13 +52,18 @@ th {
 }
 
 .table {
+    padding: 0 20px 0 0;
     position: absolute;
     top: 40%;
-    left: 50%;
+    left: 5%;
     transform: translate(-50%, -50%);
     max-width: 90vw;
     max-height: 50vh;
     border-radius: 15px;
     background-color: #3b82f6;
     overflow: auto;
+}
+
+canvas {
+
 }
